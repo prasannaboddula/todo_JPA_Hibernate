@@ -44,15 +44,17 @@ public class TodoJpaService implements TodoRepository{
             Todo newTodo = todoJpaRepository.findById(id).get();
             if(todo.getTodo() != null){
                 newTodo.setTodo(todo.getTodo());
-            }if(todo.getStatus() != null){
+            }
+            if(todo.getStatus() != null){
                 newTodo.setStatus(todo.getStatus());
             }
             if(todo.getPriority() != null){
                 newTodo.setPriority(todo.getPriority());
             }
             todoJpaRepository.save(newTodo);
-            
+
             return newTodo;
+
         }catch(Exception e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }

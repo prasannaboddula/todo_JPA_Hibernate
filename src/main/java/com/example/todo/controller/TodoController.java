@@ -17,20 +17,20 @@ public class TodoController{
     public ArrayList<Todo> getTodos(){
         return todoService.getTodos();
     }
-    @GetMapping("/todos/{todoId}")
-    public Todo getTodoById(@PathVariable("todoId") int todoId){
+    @GetMapping("/todos/{id}")
+    public Todo getTodoById(@PathVariable("id") int todoId){
         return todoService.getTodoById(todoId);
     }
     @PostMapping("/todos")
     public Todo addTodo(@RequestBody Todo todo){
         return todoService.addTodo(todo);
     }
-    @PutMapping("/todos/{todoId}")
-    public Todo updateTodo(@PathVariable("todoId") int todoId, @RequestBody Todo todo){
+    @PutMapping("/todos/{id}")
+    public Todo updateTodo(@PathVariable("id") int todoId, @RequestBody Todo todo){
         return todoService.updateTodo(todoId, todo);
     }
-    @DeleteMapping("/todos/{todoId}")
-    public void deleteTodo(@PathVariable("todoId") int todoId){
+    @DeleteMapping("/todos/{id}")
+    public void deleteTodo(@PathVariable("id") int todoId){
         todoService.deleteTodo(todoId);
     }
 }
